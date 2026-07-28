@@ -10,4 +10,6 @@ add_executable(pcdv_minitrading_platform main.cpp
         include/trading_platform/order.h
         src/order.cpp
         include/trading_platform/trade.h
-        src/trade.cpp)
+        src/trade.cpp
+        include/trading_platform/order_book.h
+        src/order_book.cpp)
