@@ -6,12 +6,22 @@ set(CMAKE_CXX_STANDARD 20)
 # Include directories
 include_directories(${CMAKE_SOURCE_DIR}/include)
 
-add_executable(pcdv_minitrading_platform src/main.cpp
-        include/trading_platform/order.h
+# Source files
+set(SOURCES
+        src/main.cpp
         src/order.cpp
-        include/trading_platform/trade.h
         src/trade.cpp
-        include/trading_platform/order_book.h
         src/order_book.cpp
+        src/trading_platform.cpp
+)
+
+# Header files (for IDE support)
+set(HEADERS
+        include/trading_platform/order.h
+        include/trading_platform/trade.h
+        include/trading_platform/order_book.h
         include/trading_platform/trading_platform.h
-        src/trading_platform.cpp)
+)
+
+# Create executable
+add_executable(trading_platform ${SOURCES} ${HEADERS})
