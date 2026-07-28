@@ -38,6 +38,7 @@ if (BUILD_TESTS)
             tests/test_order.cpp
             tests/test_trade.cpp
             tests/test_order_book.cpp
+            tests/test_trading_platform.cpp
     )
 
     add_executable(trading_platform_tests ${TEST_SOURCES} ${LIB_SOURCES} ${HEADERS})
