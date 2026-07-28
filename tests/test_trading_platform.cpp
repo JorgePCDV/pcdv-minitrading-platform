@@ -59,11 +59,9 @@ TEST_F(TradingPlatformTest, MatchingOrders) {
     int buy_id = platform->placeOrder(OrderSide::BUY, OrderType::LIMIT, 100, 97.00);
     int sell_id = platform->placeOrder(OrderSide::SELL, OrderType::LIMIT, 100, 96.00);
     
-    // Should match and both orders should be filled
     EXPECT_GT(buy_id, 0);
     EXPECT_GT(sell_id, 0);
     
-    // Print status to verify (captured output for manual inspection)
     testing::internal::CaptureStdout();
     platform->printStatus();
     std::string output = testing::internal::GetCapturedStdout();
@@ -71,10 +69,8 @@ TEST_F(TradingPlatformTest, MatchingOrders) {
 }
 
 TEST_F(TradingPlatformTest, MarketOrderExecution) {
-    // Place limit sell first
     platform->placeOrder(OrderSide::SELL, OrderType::LIMIT, 100, 95.00);
     
-    // Then market buy
     int buy_id = platform->placeOrder(OrderSide::BUY, OrderType::MARKET, 80);
     
     EXPECT_GT(buy_id, 0);
