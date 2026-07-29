@@ -27,3 +27,11 @@ void TradingPlatform::printStatus() const {
     order_book_.printOrderBook();
     order_book_.printTradeHistory();
 }
+
+void TradingPlatform::printOrderBook() const {
+    order_book_.printOrderBook();
+}
+
+void TradingPlatform::printTradeHistory() const {
+    order_book_.printTradeHistory();
+}
