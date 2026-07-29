@@ -10,6 +10,11 @@ set(LIB_SOURCES
         src/trade.cpp
         src/order_book.cpp
         src/trading_platform.cpp
+        src/thread_pool.cpp
+        src/async_order_book.cpp
+        src/market_data_feed.cpp
+        src/risk_manager.cpp
+        src/multi_threaded_platform.cpp
 )
 
 set(HEADERS
@@ -17,6 +22,11 @@ set(HEADERS
         include/trading_platform/trade.h
         include/trading_platform/order_book.h
         include/trading_platform/trading_platform.h
+        include/trading_platform/thread_pool.h
+        include/trading_platform/async_order_book.h
+        include/trading_platform/market_data_feed.h
+        include/trading_platform/risk_manager.h
+        include/trading_platform/multi_threaded_platform.h
 )
 
 add_executable(trading_platform src/main.cpp ${LIB_SOURCES} ${HEADERS})
