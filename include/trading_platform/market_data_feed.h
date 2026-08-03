@@ -40,7 +40,7 @@ private:
     PriceCallback callback_;
     mutable std::mutex data_mutex_;
     PriceTick current_tick_;
-    int update_interval_ms_{100}; // 100ms updates
+    int update_interval_ms_{100};
     
     std::random_device rd_;
     std::mt19937 gen_;

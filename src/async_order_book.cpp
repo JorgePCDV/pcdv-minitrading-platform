@@ -6,7 +6,6 @@ AsyncOrderBook::AsyncOrderBook(size_t num_threads)
     : thread_pool_(num_threads), next_order_id_(1) {}
 
 AsyncOrderBook::~AsyncOrderBook() {
-    // Wait for all pending tasks to complete
     thread_pool_.waitForCompletion();
 }
 
@@ -39,7 +38,6 @@ void AsyncOrderBook::processOrder(std::shared_ptr<Order> order) {
     // Simulate some processing time (e.g., validation, risk checks)
     std::this_thread::sleep_for(std::chrono::milliseconds(1));
 
-    // Process the order
     order_book_.addOrder(order);
 
     // Update statistics
