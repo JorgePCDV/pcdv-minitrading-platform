@@ -72,8 +72,7 @@ bool MultiThreadedPlatform::cancelOrderAsync(int order_id) {
 }
 
 void MultiThreadedPlatform::onMarketTick(const PriceTick& tick) {
-    // Update risk manager with current market data
-    // This runs in the market data thread
+    // Update risk manager with current market data, runs in the market data thread
     static int tick_count = 0;
     tick_count++;
 
@@ -90,7 +89,7 @@ void MultiThreadedPlatform::onMarketTick(const PriceTick& tick) {
 }
 
 void MultiThreadedPlatform::processAutoOrders(const PriceTick& tick) {
-    // Example: Simple moving average crossover strategy
+    // Simple moving average crossover strategy
     static double last_price = tick.bid_price;
     static int count = 0;
     
